@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.wangtao.day7_jingdong.R;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -23,6 +24,7 @@ public class MyApp extends Application{
     public void onCreate() {
         super.onCreate();
         getMyAppImageLoder();
+        Fresco.initialize(this);
     }
 
     public void getMyAppImageLoder() {

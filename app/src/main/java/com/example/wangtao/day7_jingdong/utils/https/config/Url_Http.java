@@ -8,5 +8,7 @@ package com.example.wangtao.day7_jingdong.utils.https.config;
  */
 public class Url_Http {
     public static String shou_URl="https://www.zhaoapi.cn/ad/getAd";
+    public static String fei_LeftURl="https://www.zhaoapi.cn/product/getCatagory";
+    public static String fei_RightURl="https://www.zhaoapi.cn/product/getProductCatagory";
 
 }

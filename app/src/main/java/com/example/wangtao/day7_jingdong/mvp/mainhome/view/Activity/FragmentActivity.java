@@ -10,9 +10,9 @@ import android.widget.RadioGroup;
 import com.example.wangtao.day7_jingdong.R;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.adapter.MainAdapters;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.FaFragment;
-import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.FeiFragment;
+import com.example.wangtao.day7_jingdong.mvp.homefei.view.fragment.FeiFragment;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.GouFragment;
-import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.ShouFragment;
+import com.example.wangtao.day7_jingdong.mvp.homeshou.view.Fragment.ShouFragment;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.WoFragment;
 
 import java.util.ArrayList;

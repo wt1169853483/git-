@@ -1,9 +1,6 @@
 package com.example.wangtao.day7_jingdong.mvp.mainhome.view.iview;
 
 import com.example.wangtao.day7_jingdong.base.iview;
-import com.example.wangtao.day7_jingdong.mvp.mainhome.model.bean.ShouUserBean;
-
-import java.util.List;
 
 /**
  * Created by wangtao on 2018/6/13.
@@ -12,6 +9,6 @@ import java.util.List;
  * 作者:wangtao
  */
 public interface IShouFragment extends iview {
-      void getDataSuccess(List<ShouUserBean.DataBean> data);
+      void getDataSuccess(String json);
       void getDataError(String error);
 }
