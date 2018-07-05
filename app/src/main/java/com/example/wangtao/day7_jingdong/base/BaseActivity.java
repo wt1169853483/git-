@@ -30,7 +30,10 @@ public abstract class BaseActivity <P extends BasePresenter> extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        presenter=probildPresenter();
+        if(presenter ==null){
+            presenter=probildPresenter();
+            InitData();
+        }
         initViews();
     }
 
@@ -40,7 +43,10 @@ public abstract class BaseActivity <P extends BasePresenter> extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if(isVisibleToUser){
-            presenter=probildPresenter();
+            if (presenter == null){
+                return;
+            }
+
             InitData();
         }else{
              NoitData();

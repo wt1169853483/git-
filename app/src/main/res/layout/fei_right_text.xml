@@ -9,11 +9,12 @@
        android:layout_marginTop="20dp"
        android:id="@+id/tv_recycle_titles"
        android:text="11"
-       android:textSize="20dp"
-       android:background="#692cc0ff"
+       android:textSize="35dp"
        android:textStyle="bold"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content" />
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       />
 
    <android.support.v7.widget.RecyclerView
        android:layout_below="@+id/tv_recycle_titles"

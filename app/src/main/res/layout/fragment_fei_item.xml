@@ -60,11 +60,24 @@
             android:layout_height="match_parent"
             android:background="#cdcdcd" />
 
-        <FrameLayout
-            android:id="@+id/fei_fragment_container"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3.0" />
+            android:orientation="vertical"
+            android:layout_weight="3"
+            >
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="150dp"
+               android:src="@drawable/timg"
+               android:scaleType="centerCrop"
+               />
+            <FrameLayout
+                android:id="@+id/fei_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                 />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

@@ -11,4 +11,7 @@ import com.example.wangtao.day7_jingdong.base.iview;
 public interface IShouFragment extends iview {
       void getDataSuccess(String json);
       void getDataError(String error);
+
+      void getSuccessOne(String jsonone);
+      void getErrorOne(String errorone);
 }

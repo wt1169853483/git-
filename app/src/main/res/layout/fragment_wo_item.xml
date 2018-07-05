@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#0ff"
     >
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="210dp"
+       android:background="@drawable/reg_bg"
+       >
+     <ImageView
+         android:layout_width="80dp"
+         android:layout_height="80dp"
+          android:src="@drawable/user"
+         android:layout_marginTop="30dp"
+         android:id="@+id/wo_login_hold"
+         />
+      <TextView
+          android:id="@+id/fragment_wo_item_textName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/wo_login_hold"
+          android:layout_marginTop="40dp"
+          android:text="jd_158_dasada"
+          android:textSize="20dp"
+          android:layout_marginLeft="5dp"
+          />
+       <ImageView
+           android:id="@+id/wo_weixin_image"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:background="@drawable/xx"
+           android:layout_alignParentRight="true"
+           android:layout_marginLeft="10dp"
+           />
+       <ImageView
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:background="@drawable/sz"
+           android:layout_toLeftOf="@+id/wo_weixin_image"
+           />
+   </RelativeLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

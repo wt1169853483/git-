@@ -41,12 +41,16 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ViewHolder holder1 = (ViewHolder) holder;
+
+
         holder1.tv_recycle_title.setText(lists.get(position).getName());
+
+
         List<FeiRightBean.DataBean.ListBean> list_child = lists.get(position).getList();
         MyRecyclechildAdapter adapter_child = new MyRecyclechildAdapter(context,list_child);
         holder1.recyclerView.setAdapter(adapter_child);
-        holder1.recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.HORIZONTAL));
-        Log.d("data",lists.toString()+"");
+        holder1.recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
+        //Log.d("data",lists.toString()+"");
 //        holder1.recyclerView.setAdapter();
 
 
@@ -54,7 +58,7 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemCount() {
-        return lists.size();
+        return lists == null? 0:lists.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -66,7 +70,6 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             super(itemView);
             recyclerView = itemView.findViewById(R.id.recycle);
             tv_recycle_title = itemView.findViewById(R.id.tv_recycle_titles);
-
         }
     }
 }

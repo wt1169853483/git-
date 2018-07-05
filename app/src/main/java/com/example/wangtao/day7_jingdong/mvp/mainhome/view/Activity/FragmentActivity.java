@@ -1,5 +1,6 @@
 package com.example.wangtao.day7_jingdong.mvp.mainhome.view.Activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,12 +9,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.wangtao.day7_jingdong.R;
+import com.example.wangtao.day7_jingdong.mvp.homefei.view.fragment.FeiFragment;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.adapter.MainAdapters;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.FaFragment;
-import com.example.wangtao.day7_jingdong.mvp.homefei.view.fragment.FeiFragment;
-import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.GouFragment;
+import com.example.wangtao.day7_jingdong.mvp.homegou.view.fragmnets.GouFragment;
 import com.example.wangtao.day7_jingdong.mvp.homeshou.view.Fragment.ShouFragment;
-import com.example.wangtao.day7_jingdong.mvp.mainhome.view.fragment.WoFragment;
+import com.example.wangtao.day7_jingdong.mvp.homewo.view.fragment.WoFragment;
+import com.umeng.socialize.UMShareAPI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,5 +113,10 @@ public class FragmentActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
 }

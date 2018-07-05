@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +16,9 @@ import android.widget.Toast;
 import com.example.wangtao.day7_jingdong.R;
 import com.example.wangtao.day7_jingdong.base.BaseActivity;
 import com.example.wangtao.day7_jingdong.mvp.homefei.adapter.FeiLeftAdapter;
+import com.example.wangtao.day7_jingdong.mvp.homefei.adapter.MyRecycleAdapter;
 import com.example.wangtao.day7_jingdong.mvp.homefei.model.bean.FeiLeftBean;
+import com.example.wangtao.day7_jingdong.mvp.homefei.model.bean.FeiRightBean;
 import com.example.wangtao.day7_jingdong.mvp.homefei.presenter.FeiFragmentPresenter;
 import com.example.wangtao.day7_jingdong.mvp.mainhome.view.iview.IShouFragment;
 import com.example.wangtao.day7_jingdong.utils.https.config.Url_Http;
@@ -33,6 +37,7 @@ public class FeiFragment extends BaseActivity<FeiFragmentPresenter> implements V
     private static final String TAG = "FeiFragment";
     private ListView listView;
     private List<FeiLeftBean.DataBean> data;
+    private RecyclerView recyclerView;
 
     @Override
     protected int probildId() {
@@ -47,14 +52,7 @@ public class FeiFragment extends BaseActivity<FeiFragmentPresenter> implements V
         //获取组件
         listView = view.findViewById(R.id.fei_listview);
         // presenter.shouPrement(Url_Http.fei_LeftURl);
-       /* FragmentManager manager=getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        Fragment fragment= new RightFeiFragment();
-        transaction.replace(R.id.fei_fragment_container,fragment);
-        Bundle build =new Bundle();
-        build.putString("urls","1234654");
-        fragment.setArguments(build);
-        transaction.commit();*/
+
     }
 
     //监听事件
@@ -64,13 +62,21 @@ public class FeiFragment extends BaseActivity<FeiFragmentPresenter> implements V
 
     @Override
     protected void InitData() {
-         presenter.shouPrement(Url_Http.fei_LeftURl);
 
+
+         presenter.shouPrement(Url_Http.fei_LeftURl);
     }
 
     @Override
     protected void initViews() {
-
+        FragmentManager manager=getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        Fragment fragment= new RightFeiFragment();
+        transaction.replace(R.id.fei_fragment_container,fragment);
+        Bundle build =new Bundle();
+        build.putString("urls","1");
+        fragment.setArguments(build);
+        transaction.commit();
     }
 
     @Override
@@ -93,7 +99,6 @@ public class FeiFragment extends BaseActivity<FeiFragmentPresenter> implements V
         data = feiLeftBean.getData();
         FeiLeftAdapter feiLeftAdapter=new FeiLeftAdapter(data,getActivity());
         listView.setAdapter(feiLeftAdapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -106,7 +111,7 @@ public class FeiFragment extends BaseActivity<FeiFragmentPresenter> implements V
                 transaction.replace(R.id.fei_fragment_container,fragment);
                 Bundle build =new Bundle();
                 int cid = dataBean.getCid();
-                Log.d(TAG, "onItemClick:cod: ++++++++++++++++"+cid);
+               // Log.d(TAG, "onItemClick:cod: ++++++++++++++++"+cid);
                 build.putInt("urls",cid);
                 fragment.setArguments(build);
                 transaction.commit();
@@ -119,6 +124,15 @@ public class FeiFragment extends BaseActivity<FeiFragmentPresenter> implements V
 
     }
 
+    @Override
+    public void getSuccessOne(String json) {
+
+    }
+
+    @Override
+    public void getErrorOne(String json) {
+
+    }
 
 
 }

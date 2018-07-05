@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.wangtao.day7_jingdong.R;
+import com.umeng.socialize.UMShareAPI;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,4 +32,10 @@ public class MainActivity extends AppCompatActivity {
             }
         },1000,1000);
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
+
 }

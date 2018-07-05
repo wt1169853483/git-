@@ -50,7 +50,9 @@ public class RightFeiFragment extends BaseActivity<FeiFragmentPresenter> impleme
     protected void InitView(View view) {
 //        textView = view.findViewById(R.id.right_text);
         recyclerView = view.findViewById(R.id.recycle_gilde);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
             }
     @Override
     protected void InitListener() {
@@ -67,9 +69,11 @@ public class RightFeiFragment extends BaseActivity<FeiFragmentPresenter> impleme
     protected void initViews() {
         Bundle arguments = getArguments();
         url = arguments.getInt("urls");
+        //presenter.shouPrement(Url_Http.fei_RightURl+"?cid="+url);
+        presenter.shouChildPrement(url+"");
         //presenter.shouPrement();
-        presenter.shouPrement(Url_Http.fei_RightURl+"?cid="+url);
-        Toast.makeText(getContext(), ""+url, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), ""+url, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -84,6 +88,16 @@ public class RightFeiFragment extends BaseActivity<FeiFragmentPresenter> impleme
 
     @Override
     public void getDataSuccess(String json) {
+
+    }
+
+    @Override
+    public void getDataError(String error) {
+
+    }
+
+    @Override
+    public void getSuccessOne(String json) {
         Gson gson=new Gson();
         FeiRightBean feiRightBean = gson.fromJson(json, FeiRightBean.class);
         List<FeiRightBean.DataBean> data = feiRightBean.getData();
@@ -103,7 +117,7 @@ public class RightFeiFragment extends BaseActivity<FeiFragmentPresenter> impleme
     }
 
     @Override
-    public void getDataError(String error) {
+    public void getErrorOne(String json) {
 
     }
 }

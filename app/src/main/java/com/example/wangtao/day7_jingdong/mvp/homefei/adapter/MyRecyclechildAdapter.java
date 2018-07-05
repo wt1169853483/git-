@@ -58,7 +58,6 @@ public class MyRecyclechildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
             draweeView = itemView.findViewById(R.id.sdv);
             tv_name_child = itemView.findViewById(R.id.tv_name_child);
-
         }
     }
 }

@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         fresco:roundAsCircle="true"
-
+        android:layout_margin="20dp"
         />
 
     <TextView
@@ -20,5 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/sdv"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
         android:text="TextView" />
+
 </RelativeLayout>

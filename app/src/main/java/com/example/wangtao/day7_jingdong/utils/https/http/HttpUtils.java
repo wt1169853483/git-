@@ -38,7 +38,6 @@ public class HttpUtils  {
                     URL url1=new URL(url);
                     HttpURLConnection connection = (HttpURLConnection) url1.openConnection();
                     connection.setConnectTimeout(3000);
-
                     if (connection.getResponseCode() == 200){
                         Log.d(TAG, "HttpUtile-------------- "+"请求成功");
                         InputStream inputStream = connection.getInputStream();

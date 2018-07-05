@@ -37,6 +37,25 @@ public class FeiFragmentPresenter extends BasePresenter<IShouFragment>{
                     }
                 }
             });
-    }
 
+
+    }
+    public void shouChildPrement(String url) {
+        feiFragmnetModel.shouChildModel(url, new FeiFragmnetModel.IncanChildCallChFei() {
+            @Override
+            public void getChildSuccess(String json) {
+                if (iview != null) {
+                    iview.getSuccessOne(json);
+                }
+            }
+
+            @Override
+            public void getChildError(String error) {
+                if (iview != null) {
+                    iview.getErrorOne(error);
+                }
+            }
+        });
+
+    }
 }

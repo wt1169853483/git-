@@ -3,7 +3,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff0"
     >
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/gou_item_expandableListView"
+        ></ExpandableListView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#d0d0d0"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        >
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+             android:gravity="center_vertical"
+            android:id="@+id/gou_item_checkedBox"
+            />
+        <TextView
+            android:layout_toRightOf="@+id/gou_item_checkedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="全选"
+            android:textStyle="bold"
+            android:id="@+id/quanxian"
+            />
+        <TextView
+            android:id="@+id/gou_item_sumPrice"
+             android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/quanxian"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="总价:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/gou_item_btnjiesuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="结算:(1)"
+        android:layout_marginTop="20dp"
+        />
 
+    </RelativeLayout>
 </LinearLayout>
